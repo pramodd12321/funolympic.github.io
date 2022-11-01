@@ -1,0 +1,138 @@
+{% extends 'olympic/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block css %}
+<style>
+ 
+</style>
+{% endblock %}
+</head>
+
+
+{% block body %}
+
+
+<a style="margin-left: 1450px" href="{% url 'dashboard' %}">Go Back </a>
+
+<!---Broadcasting video-->
+
+
+<h1 style="margin-left: 550px; margin-top: 10px"> Broadcasting Live Video </h1>
+<embed style="width:720px; height:450px; margin-left: 400px; margin-top:20px" src="https://www.youtube.com/embed/CmLXQjAFI8A?controls=0&showinfo=0"></embed>
+
+<!-- Archived videos with comments-->
+
+<h1 style="margin-left: 500px; margin-top: 30px"> Archived videos with comments </h1>
+
+<li style="margin-left: 600px"><a href="{% url 'lvideos' %}">Click this link to see archived videos</a></li>
+
+
+<!--- Matches-->
+
+ <h1 style="text-align: center; margin-top: 100px;">Football Scoreboard</h1>
+    
+<div class="row">
+    {% for matches in matches %}
+     <div class="card">
+       <div class="card-body" style="text-align: center">
+            <a href="#"></a><h2>{{matches.country_A}} vs {{matches.country_B}} </h2></a> <p>Match started at</p>
+            <p>{{matches.time}} at {{matches.venue}}</p>
+       </div>
+     </div>
+     <div class="card" style="width: 18rem; margin-left: 40%">
+       <div class="card-body" style="text-align: center">
+<!--         Table goes here-->
+                 <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th scope="col">{{matches.symbol_A}}</th>
+                          <td>{{matches.total_goal_A}}</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">{{matches.symbol_B}}</th>
+                          <td>{{matches.total_goal_B}}</td>
+                        </tr>
+                      </tbody>
+                 </table>
+
+                <a class="btn btn-outline-success" href="/Football_Scoreboard/{{matches.id}}" role="button">View More</a>
+       </div>
+
+     </div>
+
+    {% endfor  %}
+
+
+</div>
+
+  <!---About---->
+    <section id="about">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6"></div>
+        <h2>About Us</h2>  
+        <div class="about-content">
+			PLAY, LEARN & GROW AT funolympic EVENTS NATIONWIDE
+			There's free fun and football for everyone at funolympic game events, taking place in Bayjing city. 
+			Whether you're a parent living it up in the Fan Fest while watching your kids burn off some steam or a league leader networking at the League Leader Social and connecting with your community at the Fan Fest, you won't want to miss this great event that brings the FDM to life.
+	
+	</div>
+        <button type="button" class="btn btn-primary">See more :)</button>
+        </div>
+        </div>
+    </section>
+
+
+      <section id="contact">
+        <div class="container">
+            <h1>Contact Us</h1>
+        <div class="row">
+              <div class="col-md-6">
+                  <form class="contact-form">
+                  <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Enter your name">
+                 </div>
+            <div class="form-group">
+            <input type="number" class="form-control" placeholder="Enter your phone no.">
+            </div>
+      <div class="form-group">
+      <input type="email" class="form-control" placeholder="Enter your email id">
+     </div>
+
+     <div class="form-group">
+       <textarea class="form-control" rows="4" placeholder="Provide any feedback"></textarea>
+    </div>
+        <button type="submit" class="btn btn-primary">Send info</button>
+            </form>
+            </div>
+            <div class="col-md-6 contact-info">
+                <div class="follow"><b>Address:</b><i class="fa fa-map-marker"></i>
+                      NewRoad, Kathmandu, Nepal</div>
+                <div class="follow"><b>Phone:</b><i class="fa fa-phone"></i>011728353</div>
+                <div class="follow"><b>Email:</b><i class="fa fa-envelope-o"></i>newroad@gmail.com</div>
+                <div class="follow"><label><b>Follow us on social media:</b></label>
+                   <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                   <a href="https://www.youtube.com"><i class="fa fa-youtube-play"></i></a>
+                   <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                   <a href="https://www.gmail.com"><i class="fa fa-google-plus"></i></a>
+                 </div>
+            </div>
+            </div>
+        </div>
+      </section>
+
+
+
+<script>
+   
+
+</script>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
