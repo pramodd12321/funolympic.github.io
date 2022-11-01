@@ -240,12 +240,12 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 STATIC_URL = '/static/'
 
-	if not DEBUG:
-		STATIC_ROOT= ''
+if not DEBUG:
+    STATIC_ROOT= ''
 
-	STATICFILES_DIRS = [
-    		os.path.join(BASE_DIR, 'static/')
-	]
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static/')
+]
 
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
