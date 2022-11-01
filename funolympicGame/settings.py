@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'crispy_forms',
     'django_social_share',
-    'social_django',
+    # 'social_django',
 
     'django.contrib.sites',
     'allauth',
