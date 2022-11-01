@@ -1,1 +1,1 @@
-web: gunicorn
+web: gunicorn funolympicGame.wsgi
