@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -238,7 +239,7 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -249,8 +250,8 @@ STATICFILES_DIRS = [
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 MEDIA_URL= "/media/"
 
-RECAPTCHA_PUBLIC_KEY = '6LdUb4EgAAAAAMsgcz12UpGH8VQybcRtCDJR24uK'
-RECAPTCHA_PRIVATE_KEY = '6LdUb4EgAAAAAMxvPI776Y2PNU_Byu5UMd2PRI_l'
+RECAPTCHA_PUBLIC_KEY = '6LeyOs4iAAAAAMH9ugga5_J13uXVpSz-dcLCGK-3'
+RECAPTCHA_PRIVATE_KEY = '6LeyOs4iAAAAAPwAnNcuVCG783gzNiteYjl22Wmu'
 
 RECAPTCHA_REQUIRED_SCORE = 0.85
 
@@ -269,4 +270,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '5ae83ade03b6a8162fc58f734c820bdd'  # App Secret
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '405900337679-0u5inkfsmothejbl72lin7h4uvg1r73m.apps.googleusercontent.com'  # App ID
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'  # App Secret
+
+django_heroku.settings(locals())
+
 
